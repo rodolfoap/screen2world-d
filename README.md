@@ -1,6 +1,11 @@
 # Screen-to-World-D
 
-Generates an extrinsics matrix, using an intrinsics matrix and a set of person detection boxes as required inputs.
+Generates an _extrinsics matrix_, using an _intrinsics matrix_ and a set of person detection boxes as required inputs. Allows finding screen-to-world correspondences. The _extrinsics matrix_ is calculated by using a set of person detection boxes to calculate the distances to the camera. Knowing the camera bearing, world-to-screen points correspondences are automatically found, and the _extrinsics matrix_ is calculated in some steps.
+
+* To find screen-to-world correspondences (which point in the space in the camera image corresponds to a point in the screen), another approach is suggested. Given that an _extrinsics matrix_ is required, the _extrinsics matrix_ is calculated using a set of world-to-screen point correspondences. See the full calculation here: https://github.com/rodolfoap/screen2world-k.
+* The previous applications require an _intrinsics matrix_ (also called _calibration matrix_, _camera matrix_ or _K matrix_) which can be calculated using https://github.com/rodolfoap/cameracalibration.
+* To find screen-to-world correspondences in a simple manner, another approach is proposed: See the full calculation here: https://github.com/rodolfoap/screen2world-h. In such example, In such example, an _homography matrix_ is calculated just by using a set of world-to-screen point correspondences. Therefore, the _intrinsics_ matrix (the one calculated with this application) is not needed.
+
 
 ## Overview
 
